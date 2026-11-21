@@ -17,7 +17,7 @@
 *{box-sizing:border-box;margin:0}
 body{font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
 a{color:inherit}
-section{padding:64px 20px;max-width:1000px;margin:auto}
+section{padding:64px 20px;max-width:1000px;margin:auto;text-align:center}
 h2{font-size:1.8rem;margin-bottom:24px;color:var(--accent)}
 .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:56px 20px 32px;background:radial-gradient(circle at 50% 0,#2a2210,var(--bg) 70%)}
 .hero h1{font-size:clamp(2.4rem,7vw,4.5rem)}
@@ -27,16 +27,18 @@ h2{font-size:1.8rem;margin-bottom:24px;color:var(--accent)}
 .hero .booking{margin:0 0 28px;font-size:1.05rem}
 .btn{display:inline-block;padding:14px 28px;border-radius:40px;background:var(--accent);color:#000;font-weight:700;text-decoration:none;margin:6px}
 .btn.alt{background:transparent;color:var(--txt);border:1px solid var(--mut)}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--card);border-radius:14px;padding:20px}
+.grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.card{background:var(--card);border-radius:14px;padding:20px;flex:0 1 290px}
 .card h3{margin-bottom:6px}.card p{color:var(--mut);font-size:.95rem}
 .vid{aspect-ratio:9/16;background:#000;border-radius:14px;overflow:hidden}
 .vid video{width:100%;height:100%;object-fit:cover;background:#000}
 .featured-wrap{max-width:380px;margin:0 auto 28px;text-align:center}
-.sub{color:var(--mut);margin:-12px 0 20px}
+.sub{color:var(--mut);margin:-12px auto 20px;max-width:640px}
 figure{margin:0}figcaption,.cap{color:var(--mut);font-size:.88rem;margin:8px 0 16px}
-.grid-2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,320px));justify-content:start}
-.clients{display:flex;flex-wrap:wrap;gap:12px}
+.grid-2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,320px));justify-content:center}
+#videos .grid{display:grid;grid-template-columns:repeat(2,minmax(0,320px));justify-content:center}
+#about p{max-width:720px;margin:0 auto}
+.clients{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 .clients span{background:var(--card);padding:10px 18px;border-radius:30px}
 .quote{font-style:italic}.quote small{display:block;margin-top:8px;color:var(--accent);font-style:normal}
 footer{text-align:center;padding:48px 20px;color:var(--mut)}
@@ -49,8 +51,8 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   .hero .booking{font-size:.95rem;margin-bottom:22px}
   .hero .btn{display:block;width:100%;max-width:320px;margin:8px auto;text-align:center}
   #contact .btn{display:block;width:100%;max-width:320px;margin:10px auto}
-  .grid{grid-template-columns:1fr}
-  #videos .grid,#beyond .grid-2{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:0 16px 8px}
+  .card{flex:1 1 100%}
+  #videos .grid,#beyond .grid-2{display:flex;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:0 16px 8px}
   #videos .grid figure,#beyond .grid-2 figure{flex:0 0 74%;scroll-snap-align:center}
   .featured-wrap{max-width:340px;margin:0 auto 20px}
   .clients span{padding:8px 14px;font-size:.9rem}
